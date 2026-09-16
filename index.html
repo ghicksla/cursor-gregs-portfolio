@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greg Hicks | AI-Native Practitioner, Workshop Facilitator & Builder</title>
+  
+  <meta name="description" content="Portfolio and workshop archive of Greg Hicks — Principal Technical Program Manager and AI builder at Intuit. Hands-on immersion sessions, VDLC framework, and interactive tools.">
+  <meta name="author" content="Greg Hicks">
+  <meta name="theme-color" content="#070B14">
+
+  <!-- Open Graph / Social Sharing (Optimized for GitHub Pages URLs) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Greg Hicks | AI-Native Practitioner & Workshop Facilitator">
+  <meta property="og:description" content="Turn ambiguity into working software. Explore authentic workshop playbooks, past conference sessions, and the interactive Vibe Studio.">
+  <meta property="og:image" content="https://ghicksla.github.io/cursor-gregs-portfolio/greg-hicks.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greg Hicks | AI-Native Practitioner & Builder">
+  <meta name="twitter:description" content="From idea to runnable browser app in under 15 minutes. Explore workshop formats and internal AI tools.">
+  <meta name="twitter:image" content="https://ghicksla.github.io/cursor-gregs-portfolio/greg-hicks.jpg">
+
+  <!-- Zero-dependency Embedded SVG Favicon (Avoids GitHub Pages 404 for favicon.ico) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23070B14%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-size=%2252%22 font-weight=%22900%22 fill=%22%2300E5FF%22>GH</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              cyan: '#00E5FF',
+              emerald: '#10B981',
+              violet: '#8B5CF6',
+              purple: '#7C3AED',
+              orange: '#F59E0B',
+              dark: '#070B14',
+              surface: '#0E1729',
+              card: '#131E36',
+              border: '#1E293B',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            glow: {
+              '0%': { opacity: '0.4' },
+              '100%': { opacity: '0.8' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070B14;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-panel {
+      background: rgba(14, 23, 41, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(19, 30, 54, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(0, 229, 255, 0.15);
+    }
+    .neon-text-cyan {
+      text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    }
+    .neon-border-cyan {
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    }
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070B14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-cyan selection:text-black antialiased">
+
+  <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo / Personal Brand -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan to-brand-violet p-[2px] shadow-lg shadow-brand-cyan/20">
+          <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center font-bold font-mono text-brand-cyan text-lg group-hover:scale-105 transition-transform">
+            GH
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+            Greg Hicks
+            <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+          </span>
+          <span class="text-xs text-slate-400 block font-mono">Principal TPM & AI Builder</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">The VDLC</a>
+        <a href="#timeline" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Past Sessions</a>
+        <a href="#audiences" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">By Audience</a>
+        <a href="#tracks" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Workshop Playbooks</a>
+        <a href="#vibe-studio" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors flex items-center gap-1.5">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">Interactive</span>
+          Vibe Studio
+        </a>
+        <a href="#toolkit" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Organizer Guide</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="openBookingModal('General Inquiry')" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-brand-cyan via-brand-violet to-brand-orange hover:shadow-lg hover:shadow-brand-cyan/25 transition-all">
+          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-brand-dark rounded-[10px] group-hover:bg-opacity-0 font-semibold text-white flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-cyan group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            Get in Touch
+          </span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-6 glass-panel border-b border-slate-800 flex flex-col gap-4">
+      <a href="#about" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">The VDLC Framework</a>
+      <a href="#timeline" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Past Sessions Archive</a>
+      <a href="#audiences" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">By Audience</a>
+      <a href="#tracks" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Workshop Playbooks</a>
+      <a href="#vibe-studio" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Interactive Vibe Studio</a>
+      <a href="#toolkit" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Organizer Guide</a>
+      <button onclick="toggleMobileMenu(); openBookingModal('Mobile Menu')" class="w-full mt-2 py-3 rounded-xl bg-brand-cyan text-black font-bold text-sm">Let's Connect</button>
+    </div>
+  </header>
+
+  <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden grid-pattern">
+    <!-- Ambient glowing backdrop orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-brand-violet/20 via-brand-cyan/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow"></div>
+    <div class="absolute top-2/3 right-10 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Left: Copy & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-brand-cyan/30 text-xs font-mono text-brand-cyan shadow-sm">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
+            </span>
+            <span>PRACTITIONER ARCHIVE • SESSIONS & WORKSHOPS</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+            Turn Ambiguity into 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-indigo-200 to-brand-violet neon-text-cyan">
+              Working Software.
+            </span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            I'm <strong class="text-white font-semibold">Greg Hicks</strong>. By day, I lead Tech Strategic Programs at Intuit. Across engineering conferences, team offsites, and cross-functional brown-bags, I run hands-on immersion sessions that turn non-engineers into confident AI builders in under 15 minutes.
+          </p>
+
+          <!-- Core Credential & Superpower Pill -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/70 text-xs text-slate-300">
+              <span class="text-brand-cyan">⚡ Superpower:</span>
+              <span>Turning ambiguity into action</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/70 text-xs text-slate-300">
+              <span class="text-brand-violet">🏢 Role:</span>
+              <span>Principal TPM • Tech Strategic Programs</span>
+            </div>
+          </div>
+
+          <!-- Dual Call to Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <button onclick="openBookingModal('Bring a Session to Your Team')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-cyan text-brand-dark font-bold hover:bg-cyan-300 transition-all shadow-lg shadow-brand-cyan/25 flex items-center justify-center gap-3 group">
+              <span>Bring a Session to Your Team</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+            <a href="#timeline" class="w-full sm:w-auto px-7 py-4 rounded-xl glass-card hover:bg-slate-800/80 font-semibold text-slate-200 flex items-center justify-center gap-2.5">
+              <svg class="w-5 h-5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+              <span>Explore Past Sessions</span>
+            </a>
+          </div>
+
+          <!-- Trust Proof Metrics -->
+          <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4">
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-cyan font-mono">1,000+</div>
+              <div class="text-xs text-slate-400 mt-0.5">Teammates Empowered</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-violet font-mono">&lt; 15 min</div>
+              <div class="text-xs text-slate-400 mt-0.5">Idea to Runnable App</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-brand-orange font-mono">5+</div>
+              <div class="text-xs text-slate-400 mt-0.5">Business Groups Reached</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Glow ring backdrop -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-cyan to-brand-violet rounded-2xl blur-lg opacity-40"></div>
+
+            <!-- Terminal Mockup Window -->
+            <div class="relative glass-panel rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
+              <!-- Window top bar -->
+              <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                  <span class="ml-2 text-xs font-mono text-slate-400">Gemini Canvas • VibeCoding.live</span>
+                </div>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">LIVE ENGINE</span>
+              </div>
+
+              <!-- Terminal body with prompt animation -->
+              <div class="p-5 space-y-4 font-mono text-xs">
+                <div>
+                  <span class="text-brand-cyan">greg@workshop:~$</span>
+                  <span class="text-slate-300 ml-1">vibe-code --audience="Engineering & Ops"</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 space-y-2">
+                  <div class="text-brand-orange flex items-center gap-1.5 font-bold">
+                    <span>⚡ Prompting is the new Design Document:</span>
+                  </div>
+                  <p class="text-slate-400 leading-relaxed">
+                    "Build a real-time Status Blaster with executive bullet synthesis, Slack alerts, and risk matrix. Render full browser prototype."
+                  </p>
+                </div>
+
+                <!-- Simulation progress phases -->
+                <div class="space-y-2 pt-1">
+                  <div class="flex items-center justify-between text-[11px] text-slate-400">
+                    <span class="flex items-center gap-2 text-brand-emerald">
+                      <svg class="w-3.5 h-3.5 text-brand-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Research & PRD Definition
+                    </span>
+                    <span class="text-slate-500">done</span>
+                  </div>
+                  <div class="flex items-center justify-between text-[11px] text-slate-400">
+                    <span class="flex items-center gap-2 text-brand-emerald">
+                      <svg class="w-3.5 h-3.5 text-brand-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Reasoning Model Architecture
+                    </span>
+                    <span class="text-slate-500">done</span>
+                  </div>
+                  <div class="flex items-center justify-between text-[11px] text-slate-300">
+                    <span class="flex items-center gap-2 text-brand-cyan font-semibold">
+                      <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+                      Generating Clickable Prototype...
+                    </span>
+                    <span class="text-brand-cyan font-mono">100% (4.2s)</span>
+                  </div>
+                </div>
+
+                <!-- Mini App Preview Card inside terminal -->
+                <div class="mt-4 p-3.5 rounded-xl bg-slate-900 border border-brand-cyan/30 shadow-inner">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[11px] font-bold text-white tracking-wide">Status Blaster v2.4</span>
+                    <span class="px-2 py-0.5 rounded-full text-[9px] bg-brand-emerald/20 text-brand-emerald font-sans font-bold">READY TO RUN</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 text-center text-[10px]">
+                    <div class="p-1.5 rounded bg-slate-800 text-slate-300">Email Digest</div>
+                    <div class="p-1.5 rounded bg-slate-800 text-slate-300">Slack Blast</div>
+                    <div class="p-1.5 rounded bg-brand-cyan/20 text-brand-cyan font-bold">Exec Report</div>
+                  </div>
+                </div>
+
+              </div>
+              
+              <div class="px-4 py-3 bg-slate-950/90 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+                <span>"The vibes are immaculate."</span>
+                <span class="text-slate-500 font-mono">Karpathy Era Software</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 bg-slate-950 relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20">The Signature Framework</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Vibecoding Development Life Cycle (VDLC)</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Vibe coding isn't just "talking to a chatbot and praying." Greg equips your teams with the disciplined, 4-stage engine that turns gut instincts into board-grade software.
+        </p>
+      </div>
+
+      <!-- 4-Step Interactive Horizontal Flow -->
+      <div class="grid md:grid-cols-4 gap-6 relative">
+        
+        <!-- Step 1: Research -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-brand-cyan font-bold font-mono text-xl group-hover:bg-cyan-500 group-hover:text-black transition-all">
+              01
+            </div>
+            <h3 class="text-xl font-bold text-white">Research</h3>
+            <p class="text-xs font-mono text-brand-cyan">Understand Customer Pain</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Define the real pain point through Follow-Me-Homes, telemetry, and stakeholder interviews. Ground the AI with deep contextual reality instead of assumptions.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+            Output: Problem Statement & Context
+          </div>
+        </div>
+
+        <!-- Step 2: Design -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-brand-violet font-bold font-mono text-xl group-hover:bg-brand-violet group-hover:text-white transition-all">
+              02
+            </div>
+            <h3 class="text-xl font-bold text-white">Design</h3>
+            <p class="text-xs font-mono text-brand-violet">AI-Partnered PRD SOT</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Partner with advanced reasoning models (Gemini 2.5 Pro / GPT-4o) to co-author clear requirements, architecture flows, UI layouts, and edge cases.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+            Output: Single Source of Truth PRD
+          </div>
+        </div>
+
+        <!-- Step 3: Plan -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-brand-orange font-bold font-mono text-xl group-hover:bg-brand-orange group-hover:text-black transition-all">
+              03
+            </div>
+            <h3 class="text-xl font-bold text-white">Plan</h3>
+            <p class="text-xs font-mono text-brand-orange">Decompose Into Chunks</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Break down the vision into manageable, testable phases. Build in micro-increments: prevent the AI from hallucinating or generating bloated unmaintainable code.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+            Output: Chunked Execution Roadmap
+          </div>
+        </div>
+
+        <!-- Step 4: Implement -->
+        <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-brand-emerald font-bold font-mono text-xl group-hover:bg-brand-emerald group-hover:text-black transition-all">
+              04
+            </div>
+            <h3 class="text-xl font-bold text-white">Implement</h3>
+            <p class="text-xs font-mono text-brand-emerald">Interactive Clickable App</p>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Execute conversational vibe coding in live Canvas mode. Prompt, preview, pressure-test, and refine in real-time. Prototypes replace 30-page requirement docs.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-500">
+            Output: Live Browser Application
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Core philosophy quote banner -->
+      <div class="mt-14 p-8 rounded-2xl bg-gradient-to-r from-brand-card via-slate-900 to-brand-card border border-brand-cyan/20 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <p class="text-lg md:text-xl font-semibold text-white">
+            "Prototypes > Requirements specs. If you can describe what you need, you can build it."
+          </p>
+          <p class="text-sm text-slate-400">
+            How Greg Hicks trained hundreds of non-developers at Intuit to eliminate engineering backlogs.
+          </p>
+        </div>
+        <button onclick="openBookingModal('The VDLC Framework Session')" class="px-6 py-3 rounded-xl bg-white text-slate-900 font-bold text-sm hover:bg-brand-cyan transition-colors whitespace-nowrap shadow-md">
+          Run This Workshop With Your Team
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="timeline" class="py-24 bg-brand-dark relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20">Proven Track Record</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Past Sessions & Retrospective</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          An authentic timeline of sessions, keynotes, and brown-bags delivered across organizations over the past year.
+        </p>
+      </div>
+
+      <!-- Timeline List -->
+      <div class="space-y-6 max-w-4xl mx-auto">
+
+        <!-- Timeline Item 1 -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800 hover:border-brand-cyan/40">
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-cyan/10 text-brand-cyan font-semibold">Sept 2025</span>
+              <span class="text-xs text-slate-400 font-mono">Conference Keynote & Lab</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Intuit PgM Conference: Level Up with Vibe Coding</h3>
+            <p class="text-sm text-slate-300">
+              Co-presented with Greg Bohn to hundreds of Technical Program Managers. Attendees built retro arcade games in 10 minutes, followed by live creation of the <em>Status Blaster</em> tool.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">#pgm-community</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Space Invaders Demo</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Status Blaster</span>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Inquire about PgM Level Up session')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 whitespace-nowrap self-start md:self-center">
+            Swap Notes on This Session
+          </button>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800 hover:border-brand-violet/40">
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-violet/10 text-brand-violet font-semibold">Oct 2025</span>
+              <span class="text-xs text-slate-400 font-mono">Immersion Workshop</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">EABP AI Immersion: Meeting Transcripts to Insights</h3>
+            <p class="text-sm text-slate-300">
+              Hands-on workshop for Executive Assistants and Chiefs of Staff. Covered turning messy meeting transcripts into structured action logs, generating NotebookLM audio podcasts, and producing Google Vids offsite recaps.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">NotebookLM</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Audio Podcasts</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Google Vids</span>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Inquire about EABP / Ops Immersion')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 whitespace-nowrap self-start md:self-center">
+            Swap Notes on This Session
+          </button>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800 hover:border-brand-orange/40">
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-orange/10 text-brand-orange font-semibold">Dec 2025</span>
+              <span class="text-xs text-slate-400 font-mono">Functional Deep-Dive</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Marketing & L&D Edition: From Coders to Creators</h3>
+            <p class="text-sm text-slate-300">
+              Tailored session for brand, enablement, and communications teams demonstrating single-source content cascades, interactive KPI dashboards, and campaign intake applications.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Cascade Creator</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Tone Converters</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Marketing Dashboards</span>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Inquire about Marketing / L&D Session')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 whitespace-nowrap self-start md:self-center">
+            Swap Notes on This Session
+          </button>
+        </div>
+
+        <!-- Timeline Item 4 -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800 hover:border-brand-cyan/40">
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-cyan/10 text-brand-cyan font-semibold">Jan 2026</span>
+              <span class="text-xs text-slate-400 font-mono">Leadership Offsite</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">TSP Mid-Year Offsite: Vibe Coding 102 & Planning Cortex</h3>
+            <p class="text-sm text-slate-300">
+              Delivered the full 4-stage Vibecoding Development Life Cycle (VDLC) framework at Allied Arts Guild (Menlo Park). Teams graduated from playful retro games to architecting internal strategic tools.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">VDLC 102</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Planning Cortex</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Nano Banana Imaging</span>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Inquire about Vibe Coding 102 Offsite')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 whitespace-nowrap self-start md:self-center">
+            Swap Notes on This Session
+          </button>
+        </div>
+
+        <!-- Timeline Item 5 -->
+        <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800 hover:border-brand-emerald/40">
+          <div class="space-y-2 flex-1">
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-emerald/10 text-brand-emerald font-semibold">Feb 2026</span>
+              <span class="text-xs text-slate-400 font-mono">Executive Architecture</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">CTO Staff Proposal: FY28 Envelope-First Resource Planning</h3>
+            <p class="text-sm text-slate-300">
+              Strategic initiative to overhaul 10,000+ hours of annual planning friction into agentic, exception-based envelope governance anchored in rolling roadmaps.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] font-mono text-slate-400">
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">CTO Staff</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Envelope-First</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">60-70% Less Churn</span>
+            </div>
+          </div>
+          <button onclick="openBookingModal('Discuss Envelope-First Planning')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 whitespace-nowrap self-start md:self-center">
+            Swap Notes on This Session
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="audiences" class="py-24 relative bg-brand-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono text-brand-violet uppercase tracking-wider px-3 py-1 rounded-full bg-brand-violet/10 border border-brand-violet/20">Cross-Functional Delivery</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Sessions Run Across the Enterprise</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          I've customized AI-native sessions for engineering communities, creative marketing teams, and executive leaders. Select an audience to review the curriculum and real attendee feedback.
+        </p>
+      </div>
+
+      <!-- Audience Category Tab Bar -->
+      <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10">
+        <button onclick="switchAudienceTab('tpm')" id="tab-btn-tpm" class="audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-brand-cyan text-slate-950 shadow-lg shadow-brand-cyan/20">
+          PgM & Engineering
+        </button>
+        <button onclick="switchAudienceTab('mktg')" id="tab-btn-mktg" class="audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800">
+          Marketing & L&D
+        </button>
+        <button onclick="switchAudienceTab('comms')" id="tab-btn-comms" class="audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800">
+          Tech Communications & PR
+        </button>
+        <button onclick="switchAudienceTab('eabp')" id="tab-btn-eabp" class="audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800">
+          Chiefs of Staff & EABPs
+        </button>
+        <button onclick="switchAudienceTab('exec')" id="tab-btn-exec" class="audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800">
+          CTO Staff & Exec Strategy
+        </button>
+      </div>
+
+      <!-- Tab Content Display Card -->
+      <div id="audience-content-area" class="glass-card rounded-3xl p-8 lg:p-12 border border-slate-800">
+        <!-- Dynamically populated via switchAudienceTab -->
+      </div>
+
+    </div>
+  </section>
+
+  <section id="vibe-studio" class="py-24 bg-slate-950 relative border-t border-b border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <span class="text-xs font-mono text-brand-emerald uppercase tracking-wider px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20">Show, Don't Tell</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience Greg's "Mini-Vibe Studio"</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          During keynotes, Greg never shows static bullet points—audiences watch functional software compile live. Select a workshop prompt below or type your own to see how natural language triggers instant interactive software.
+        </p>
+      </div>
+
+      <!-- Studio Interactive Canvas UI -->
+      <div class="glass-panel rounded-3xl p-6 lg:p-8 border border-brand-cyan/25 shadow-2xl">
+        
+        <!-- Header row with prompt buttons -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-cyan animate-ping"></span>
+              Gemini Canvas Simulator
+            </h3>
+            <p class="text-xs text-slate-400">Select an authentic workshop project built during Greg's sessions:</p>
+          </div>
+
+          <!-- Prompt Preset Buttons -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="loadVibePreset('status')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-black transition-all">
+              ⚡ Status Blaster (PgM)
+            </button>
+            <button onclick="loadVibePreset('cascade')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700 hover:bg-brand-violet hover:text-white transition-all">
+              📣 Cascade Creator (Comms)
+            </button>
+            <button onclick="loadVibePreset('game')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700 hover:bg-brand-orange hover:text-black transition-all">
+              👾 Space Invaders (10-Min Dev)
+            </button>
+          </div>
+        </div>
+
+        <!-- Prompt input and execution bar -->
+        <div class="py-5">
+          <label class="block text-xs font-mono text-slate-400 mb-2">PROMPT TO CANVAS:</label>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <div class="relative flex-1">
+              <input id="vibePromptInput" type="text" value="Build a multi-channel status generator with tone refinement, one-sentence TL;DR, and executive summary" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 font-mono focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-all">
+            </div>
+            <button onclick="runVibePrompt()" class="px-6 py-3 rounded-xl bg-brand-cyan hover:bg-cyan-300 text-brand-dark font-bold text-sm flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-brand-cyan/20">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span>Compile Vibe App</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Output Sandbox Area -->
+        <div class="mt-4 rounded-2xl bg-slate-900/90 border border-slate-800 p-6 min-h-[420px] flex flex-col justify-center items-center relative overflow-hidden" id="vibeSandboxContainer">
+          <!-- Dynamic sandbox content will render here -->
+        </div>
+
+        <!-- Proof Hook -->
+        <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-emerald">✔ Real Enterprise Artifacts:</span>
+            <span>Over 1,200 functional web apps compiled live across Intuit teams in 2025–2026.</span>
+          </div>
+          <button onclick="openBookingModal('Hands-On Vibe Coding Lab')" class="text-brand-cyan hover:underline font-semibold flex items-center gap-1">
+            Run this interactive lab with your team →
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tracks" class="py-24 bg-brand-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono text-brand-orange uppercase tracking-wider px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20">Proven Session Blueprints</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Workshop Playbooks</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          These aren't hypothetical slides—they are proven session blueprints refined through actual team brown-bags, functional offsites, and community summits.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Track 1: Interactive Talk -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-slate-800 relative hover:border-brand-cyan/40 group">
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-brand-cyan border border-cyan-500/30">INTERACTIVE TALK</span>
+              <span class="text-xs text-slate-400 font-mono">45 – 60 Mins</span>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-white group-hover:text-brand-cyan transition-colors">
+                Level Up with Vibe Coding
+              </h3>
+              <p class="text-sm font-semibold text-slate-300 mt-1">The Next Frontier of Human-AI Leverage</p>
+            </div>
+
+            <p class="text-sm text-slate-400 leading-relaxed">
+              An energizing all-hands or community talk that demystifies vibe coding. Shifting the collective mindset from "writing code" to directing, prompting, and pressure-testing AI systems.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <p class="text-xs font-mono text-slate-300 uppercase tracking-wider">Session Highlights:</p>
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan">✓</span>
+                  <span>Why natural language replaces traditional PRD requirements</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan">✓</span>
+                  <span>Live 5-minute build: from blank prompt to working web app on stage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan">✓</span>
+                  <span>How non-technical builders eliminate corporate alignment drag</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-slate-800">
+            <button onclick="openBookingModal('Talk: Level Up with Vibe Coding')" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-brand-cyan hover:text-brand-dark text-white font-bold text-sm transition-all flex items-center justify-center gap-2">
+              <span>Host This Talk</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 2: Immersion Lab (Featured) -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-brand-cyan/40 bg-slate-900/90 relative shadow-xl shadow-brand-cyan/10 group">
+          
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-cyan to-brand-violet text-black text-xs font-bold uppercase tracking-wider shadow-md">
+            Most Popular Workshop
+          </div>
+
+          <div class="space-y-6 pt-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30">HANDS-ON LAB</span>
+              <span class="text-xs text-slate-400 font-mono">90 Mins – Half Day</span>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-white group-hover:text-brand-cyan transition-colors">
+                The 15-Minute Builder Lab
+              </h3>
+              <p class="text-sm font-semibold text-slate-300 mt-1">From Zero to Working App in 15 Minutes</p>
+            </div>
+
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Every attendee opens their laptop. Under the guided VDLC method, participants build a playable retro game in 10 minutes, followed by bespoke internal utilities for their day-to-day team challenges.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <p class="text-xs font-mono text-slate-300 uppercase tracking-wider">Session Breakdown:</p>
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">1.</span>
+                  <span><strong>10-Min Game Dev:</strong> Space Invaders & Tetris in browser canvas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">2.</span>
+                  <span><strong>VDLC Transition:</strong> Research → PRD → Chunked Coding</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">3.</span>
+                  <span><strong>Real Work Build:</strong> Status Blaster, Cascade Engines & Portals</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold">4.</span>
+                  <span><strong>Peer Shareouts:</strong> Live prompt coaching and troubleshooting</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-slate-800">
+            <button onclick="openBookingModal('Hands-On Lab: The 15-Minute Builder Lab')" class="w-full py-3.5 rounded-xl bg-brand-cyan text-brand-dark font-bold text-sm hover:bg-cyan-300 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-cyan/20">
+              <span>Run This Workshop</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 3: Strategy Session -->
+        <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-slate-800 relative hover:border-brand-violet/40 group">
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-violet-500/10 text-brand-violet border border-violet-500/30">STRATEGY SESSION</span>
+              <span class="text-xs text-slate-400 font-mono">60 – 90 Mins</span>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-bold text-white group-hover:text-brand-violet transition-colors">
+                AI Operating Models
+              </h3>
+              <p class="text-sm font-semibold text-slate-300 mt-1">Envelope-First Agentic Governance</p>
+            </div>
+
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Designed for leadership teams, Chiefs of Staff, and strategy partners. How to transform brittle, 10,000-hour bottoms-up annual planning cycles into agentic, exception-based operating rhythms.
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <p class="text-xs font-mono text-slate-300 uppercase tracking-wider">Discussion Focus Areas:</p>
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-violet">✓</span>
+                  <span>Planning Cortex: Multi-million dollar envelope governance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-violet">✓</span>
+                  <span>Eliminating dependency review fatigue with capacity signals</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-violet">✓</span>
+                  <span>Implementing AI productivity guardrails and dev velocity multipliers</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-8 mt-8 border-t border-slate-800">
+            <button onclick="openBookingModal('Strategy Session: AI Operating Models')" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-brand-violet hover:text-white text-white font-bold text-sm transition-all flex items-center justify-center gap-2">
+              <span>Discuss With Greg</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="bio" class="py-24 bg-slate-950 relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Speaker Headshot & Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative max-w-sm w-full">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-brand-cyan via-brand-violet to-brand-orange rounded-3xl blur-xl opacity-30"></div>
+            
+            <div class="relative rounded-3xl overflow-hidden glass-panel border border-slate-700/80 p-3">
+              <div class="rounded-2xl overflow-hidden aspect-square bg-slate-900 relative">
+                <img 
+                  src="greg-hicks.jpg" 
+                  alt="Greg Hicks" 
+                  class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                  onerror="this.src='https://placehold.co/600x600/0f172a/00E5FF?text=Greg+Hicks';"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-left">
+                  <div class="text-white font-bold text-xl">Greg Hicks</div>
+                  <div class="text-xs font-mono text-brand-cyan">Principal Technical Program Manager</div>
+                  <div class="text-xs text-slate-400">Tech Strategic Programs • Intuit</div>
+                </div>
+              </div>
+
+              <!-- Quick Badges below photo -->
+              <div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-300">
+                <div class="p-2 rounded-lg bg-slate-900/90 text-center">
+                  <span class="text-brand-cyan">Superpower:</span><br>Ambiguity to Action
+                </div>
+                <div class="p-2 rounded-lg bg-slate-900/90 text-center">
+                  <span class="text-brand-violet">Focus:</span><br>Workforce of the Future
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Speaker Credentials & Narrative -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20">About Me</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+            "Making Emerging Technologies Approachable, Scalable, and Transformative."
+          </h2>
+
+          <div class="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+            <p>
+              I lead strategic technology transformation and Workforce of the Future initiatives at Intuit. My focus has always been on <em>turning ambiguity into action</em>—bridging the gap between high-level AI ambitions and what teams actually build Monday morning.
+            </p>
+            <p>
+              Rather than delivering high-altitude slide decks, I love running hands-on immersion labs where teams open their laptops and build together. In sessions ranging from 20-person offsites to 500+ attendee community summits, I help program managers, marketers, communicators, and executive partners build real, interactive web software in minutes.
+            </p>
+            <p class="text-slate-400 text-sm">
+              In my day job, I also architect enterprise governance frameworks like the <strong>Planning Cortex</strong> and <strong>Vibecoding Development Life Cycle (VDLC)</strong>, helping streamline operating rhythms across hundreds of teams.
+            </p>
+          </div>
+
+          <!-- Proof points checklist -->
+          <div class="grid sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="text-brand-cyan">✓</span>
+              <span>Intuit PgM Community Session Lead</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-brand-cyan">✓</span>
+              <span>Creator of the VDLC Framework</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-brand-cyan">✓</span>
+              <span>Workforce of the Future Lead</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-brand-cyan">✓</span>
+              <span>Hands-on facilitator across 5+ business units</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="toolkit" class="py-24 bg-brand-dark relative border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20">Zero-Friction Planning</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Organizer's Guide & Session Logistics</h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Everything community leads, organizers, and managers need to host a session without technical friction or red tape.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8">
+        
+        <!-- Left: One-Click Bio Selector -->
+        <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <h3 class="text-xl font-bold text-white">Approved Introductions & Bios</h3>
+              <p class="text-xs text-slate-400">Copy-ready for your meeting invites, team Slacks, or agendas:</p>
+            </div>
+            <!-- Word Count Switcher -->
+            <div class="inline-flex rounded-xl bg-slate-900 p-1 border border-slate-800">
+              <button onclick="setBioLength('short')" id="bio-btn-short" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition-all">50 Words</button>
+              <button onclick="setBioLength('standard')" id="bio-btn-standard" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-cyan text-black font-bold transition-all">120 Words</button>
+              <button onclick="setBioLength('long')" id="bio-btn-long" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition-all">200 Words</button>
+            </div>
+          </div>
+
+          <!-- Bio Text Display Box -->
+          <div class="relative bg-slate-900/90 rounded-2xl p-6 border border-slate-800 text-sm text-slate-200 leading-relaxed min-h-[160px] flex items-center">
+            <p id="bioText">
+              <!-- Dynamically populated via setBioLength -->
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <span id="copyFeedback" class="text-xs text-brand-emerald opacity-0 transition-opacity font-mono">✓ Copied to clipboard!</span>
+            <button onclick="copyCurrentBio()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold flex items-center gap-2 border border-slate-700">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+              <span>Copy Selected Intro</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Session Setup -->
+        <div class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <div>
+            <h3 class="text-xl font-bold text-white">Session Setup: Zero Friction</h3>
+            <p class="text-xs text-slate-400">What attendees and organizers need on session day:</p>
+          </div>
+
+          <div class="space-y-3.5 text-xs text-slate-300">
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800/80">
+              <span class="text-brand-cyan text-base">💻</span>
+              <div>
+                <strong class="text-white block">No Local Installs:</strong>
+                Attendees just need a laptop and standard web browser (Chrome/Edge/Safari). No terminal, Node.js, or complex dev environments.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800/80">
+              <span class="text-brand-cyan text-base">🌐</span>
+              <div>
+                <strong class="text-white block">Browser Tooling:</strong>
+                Built on Google Gemini Canvas mode, Cursor, or browser-native LLM sandbox interfaces.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800/80">
+              <span class="text-brand-cyan text-base">📦</span>
+              <div>
+                <strong class="text-white block">Tangible Takeaways:</strong>
+                Every participant leaves with a standalone, single-file runnable application (`index.html`) they built themselves.
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800/80">
+              <span class="text-brand-cyan text-base">📚</span>
+              <div>
+                <strong class="text-white block">Reusable Prompt Kit:</strong>
+                Copy-paste prompt cheat sheets and VDLC templates provided to all attendees.
+              </div>
+            </div>
+          </div>
+
+          <button onclick="downloadSpeakerSheet()" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Print Session Overview Sheet</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-20 relative overflow-hidden bg-gradient-to-b from-brand-dark to-slate-950 border-t border-slate-900">
+    <div class="absolute inset-0 grid-pattern opacity-50"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-xs font-mono text-brand-cyan">
+        <span>LET'S CONNECT & SWAP NOTES</span>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+        Want to Run a Session or <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-purple-300 to-brand-violet">
+          Collaborate on AI Ways of Working?
+        </span>
+      </h2>
+
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+        Whether you want to organize a team brown-bag, compare notes on enterprise vibe coding, or bring a hands-on workshop to your group, I'm always happy to connect.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openBookingModal('Closing Banner')" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-brand-cyan text-brand-dark font-black text-base hover:bg-cyan-300 transition-all shadow-xl shadow-brand-cyan/30 flex items-center justify-center gap-3">
+          <span>Get in Touch</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-12 bg-slate-950 border-t border-slate-900 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-brand-cyan/20 border border-brand-cyan/40 flex items-center justify-center font-mono font-bold text-brand-cyan text-xs">
+          GH
+        </div>
+        <span class="font-semibold text-slate-300">Greg Hicks</span>
+        <span>•</span>
+        <span>Principal Technical Program Manager</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-brand-cyan transition-colors">Back to Top</a>
+        <a href="#timeline" class="hover:text-brand-cyan transition-colors">Past Sessions</a>
+        <a href="#tracks" class="hover:text-brand-cyan transition-colors">Playbooks</a>
+        <a href="#toolkit" class="hover:text-brand-cyan transition-colors">Organizer Guide</a>
+        <button onclick="openBookingModal('Footer')" class="text-brand-cyan hover:underline">Get in Touch</button>
+      </div>
+
+      <div class="text-slate-400">
+        &copy; <span id="currentYear">2026</span> Greg Hicks. Built with Vibe Coding principles.
+      </div>
+    </div>
+  </footer>
+
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl rounded-3xl glass-panel border border-brand-cyan/30 shadow-2xl p-6 sm:p-10 my-8">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" class="absolute top-6 right-6 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="space-y-2 mb-8 text-left">
+        <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider">Start a Conversation</span>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white">Let's Connect</h3>
+        <p class="text-xs sm:text-sm text-slate-300">
+          Interested in running an internal workshop, hosting a team lunch-and-learn, or swapping notes on AI ways of working? Drop a note below.
+        </p>
+      </div>
+
+      <!-- Inquiry Form -->
+      <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4 text-left">
+        
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Your Name *</label>
+            <input required id="formName" type="text" placeholder="Jane Doe" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan font-sans">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Work Email / LinkedIn *</label>
+            <input required id="formEmail" type="text" placeholder="jane@company.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan font-sans">
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">Team / Organization</label>
+            <input id="formOrg" type="text" placeholder="e.g. Marketing, PgM Community, Tech Staff" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan font-sans">
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1.5">What's on your mind?</label>
+            <select id="modalTrackSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan font-sans">
+              <option value="Host a hands-on workshop / brown-bag for my team" selected>Host a hands-on workshop / brown-bag for my team</option>
+              <option value="Talk or Q&A: Level Up with Vibe Coding">Talk or Q&A: Level Up with Vibe Coding</option>
+              <option value="Collaborate on AI-Native Ways of Working / VDLC">Collaborate on AI-Native Ways of Working / VDLC</option>
+              <option value="Discuss Envelope-First Planning / Operating Models">Discuss Envelope-First Planning / Operating Models</option>
+              <option value="Just saying hi / chat about vibe coding">Just saying hi / chat about vibe coding</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1.5">Message / Details</label>
+          <textarea id="formMessage" rows="3" placeholder="Tell me a bit about your group or what problem you're trying to solve with AI..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-cyan font-sans"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <p class="text-[11px] text-slate-400 font-mono">
+            💡 Submitting opens your email client with this note and copies the text to your clipboard.
+          </p>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeBookingModal()" class="px-5 py-2.5 rounded-xl text-slate-400 hover:text-white text-sm">Cancel</button>
+          <button type="submit" class="px-7 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-sm hover:bg-cyan-300 transition-all shadow-lg shadow-brand-cyan/20 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>Send Note</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-brand-cyan/40 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+    <div class="w-8 h-8 rounded-full bg-brand-cyan/20 text-brand-cyan flex items-center justify-center font-bold">✓</div>
+    <div>
+      <div id="toastTitle" class="text-sm font-bold text-white">Message Sent!</div>
+      <div id="toastMsg" class="text-xs text-slate-300">Thanks for reaching out! Greg will get back to you soon.</div>
+    </div>
+  </div>
+
+  <script>
+    const AUDIENCES_DATA = {
+      tpm: {
+        title: "Technical Program Managers & Engineering",
+        subtitle: "Prototypes Over PRDs & Automated Status Engines",
+        description: "How PgMs and TPMs move from passive document coordinators to active tool builders who accelerate velocity and eliminate engineering backlog bottlenecks.",
+        deliverable: "Status Blaster + Interactive Decision & Risk Matrix",
+        quote: "“Vibe coding completely changed our PgM team. We built our own intake automation in 15 minutes instead of waiting two quarters for PD capacity.”",
+        author: "Lead Technical Program Manager, Tech Strategic Programs",
+        topics: [
+          "Replacing 30-page requirement documents with clickable 15-minute prototypes",
+          "Developing automated weekly status synthesizers across Email, Slack, and Exec summaries",
+          "Building customized risk-assessment matrices and interactive decision logs",
+          "Bridging Jira/Dragonboat roadmaps with agentic planning signals"
+        ],
+        badgeColor: "cyan"
+      },
+      mktg: {
+        title: "Marketing & Learning Development (L&D)",
+        subtitle: "Brand Tone Converters & Campaign Engines",
+        description: "Equipping creative and enablement teams to build rich interactive dashboards, brand guideline validators, and instant multi-platform campaign copy machines.",
+        deliverable: "Intuit Cascade Creator + Social Media Idea Generator",
+        quote: "“I have zero software engineering background, but by the end of Greg's 90-minute workshop I had built a functioning marketing intake portal.”",
+        author: "Senior Marketing Manager, Global Brand & Learning",
+        topics: [
+          "Building instant brand tone converters (e.g. from developer-speak to executive pitch)",
+          "Interactive KPI dashboards generated directly from raw CSV spreadsheets",
+          "Social media multi-variant post generators with integrated hashtag engines",
+          "Standardized campaign intake forms that auto-structure project specs"
+        ],
+        badgeColor: "violet"
+      },
+      comms: {
+        title: "Tech Communications & Public Relations",
+        subtitle: "The Multi-Channel Communications Cascade",
+        description: "Transforming single technical announcements into synchronized, tone-adapted messages across Slack digests, staff emails, and executive press releases simultaneously.",
+        deliverable: "Intuit Cascade Creator (Live Comms Edition)",
+        quote: "“Greg proved that AI isn’t just for programmers. Our comms team cut message drafting and translation time down by 80%.”",
+        author: "Tech Communications Lead",
+        topics: [
+          "The 'One Source, Infinite Channels' methodology for high-stakes tech announcements",
+          "Dynamic tone and length dials for internal staff vs. external press releases",
+          "Headline variation brainstorming with instant refinement loops",
+          "Eliminating jargon and corporate fluff with agentic proofing prompts"
+        ],
+        badgeColor: "orange"
+      },
+      eabp: {
+        title: "Chiefs of Staff, EABPs & Operational Leaders",
+        subtitle: "The AI-Enabled Operating Rhythm",
+        description: "Automating the operational heartbeat: turning messy meeting transcripts into structured action logs, generating audio podcast digests, and producing video reminders.",
+        deliverable: "Meeting Action Synthesizer + NotebookLM Knowledge Bases",
+        quote: "“The session on turning transcripts into smart insights gave our executive administrative team hours of weekly productivity back.”",
+        author: "Staff Executive Business Partner (EABP)",
+        topics: [
+          "Transcribing Zoom meetings directly into categorized action items & decision logs",
+          "Generating deep-dive audio podcasts from team strategy documents via NotebookLM",
+          "Creating offsite promo and recap videos in Google Vids in under 10 minutes",
+          "Building searchable internal knowledge hubs for complex team policies"
+        ],
+        badgeColor: "emerald"
+      },
+      exec: {
+        title: "CTO Staff & Executive Strategy",
+        subtitle: "Envelope-First Agentic Planning & Resource Transformation",
+        description: "Overhauling traditional, 10,000-hour bottoms-up annual planning into agile, envelope-first agentic governance that saves 60-70% of engineering leadership hours.",
+        deliverable: "Planning Cortex + Capacity Exception Engine",
+        quote: "“Greg's proposal for exception-based envelope planning helped us retire hundreds of manual dependency sheets and commit collectively with board-level confidence.”",
+        author: "VP of Engineering & Tech Finance Lead",
+        topics: [
+          "The 'What Breaks' test: Anchoring operational planning into rolling quarterly roadmaps",
+          "Replacing granular 12-month workstream sizing with scrum-team capacity signals",
+          "Exception engines: Target-setting 1:1 agendas driven purely by variance data",
+          "Freezing AI productivity guardrails to eliminate multi-round replanning churn"
+        ],
+        badgeColor: "cyan"
+      }
+    };
+
+    const SPEAKER_BIOS = {
+      short: "Greg Hicks is a Principal Technical Program Manager in Tech Strategic Programs at Intuit. Leading Workforce of the Future initiatives, Greg facilitates hands-on workshops that turn non-engineers into confident AI builders, helping cross-functional teams build working software from conversational prompts.",
+      
+      standard: "Greg Hicks is a Principal Technical Program Manager leading Workforce of the Future and AI-native operational initiatives at Intuit. Known for his signature superpower—turning ambiguity into action—Greg focuses on making emerging technologies approachable, scalable, and immediately useful for real teams.\n\nAs a facilitator and community champion, Greg runs hands-on immersion labs across engineering summits, leadership offsites, marketing teams, and operational groups. His high-energy sessions eliminate tech intimidation, enabling attendees to build working prototypes and custom internal tools in under 15 minutes.",
+      
+      long: "Greg Hicks is a technology leader, builder, and Principal Technical Program Manager with Intuit's Tech Strategic Programs team. He leads company-wide initiatives focused on the Workforce of the Future and AI-driven operational transformation, helping teams unlock the 'Age of Infinite Leverage' without needing a traditional computer science background.\n\nThrough his Vibecoding Development Life Cycle (VDLC) framework, Greg has guided hundreds of teammates across top-tier technical conferences, executive offsites, and cross-functional workshops. His sessions are famous for their zero-theory, high-action approach: within minutes, participants move from prompt concepts to testing real software they built themselves.\n\nFrom architecting envelope-first AI resource planning models that save thousands of corporate planning hours, to guiding marketing, communications, and administrative teams into daily AI collaboration, Greg empowers teams to thrive as confident builders."
+    };
+
+    let currentBioKey = 'standard';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      switchAudienceTab('tpm');
+      setBioLength('standard');
+      loadVibePreset('status');
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function switchAudienceTab(key) {
+      const data = AUDIENCES_DATA[key];
+      if (!data) return;
+
+      document.querySelectorAll('.audience-tab-btn').forEach(btn => {
+        btn.className = 'audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-800';
+      });
+      const activeBtn = document.getElementById(`tab-btn-${key}`);
+      if (activeBtn) {
+        activeBtn.className = 'audience-tab-btn px-5 py-3 rounded-xl text-sm font-semibold transition-all bg-brand-cyan text-slate-950 shadow-lg shadow-brand-cyan/20';
+      }
+
+      const container = document.getElementById('audience-content-area');
+      if (!container) return;
+      container.innerHTML = `
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="text-xs font-mono text-brand-cyan tracking-wider uppercase">${data.deliverable}</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">${data.title}</h3>
+              <p class="text-sm font-semibold text-brand-violet mt-1">${data.subtitle}</p>
+            </div>
+            
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              ${data.description}
+            </p>
+
+            <div class="space-y-3 pt-2">
+              <div class="text-xs font-mono text-slate-400 uppercase">Core Session Takeaways:</div>
+              <div class="grid sm:grid-cols-2 gap-3">
+                ${data.topics.map(t => `
+                  <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
+                    <span class="text-brand-cyan font-bold">⚡</span>
+                    <span>${t}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="pt-4 flex items-center gap-4">
+              <button onclick="openBookingModal('Workshop for ${data.title}')" class="px-6 py-3 rounded-xl bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300 transition-all shadow-md">
+                Bring This Session to Your Group
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 relative">
+              <div class="text-xs font-mono text-slate-400 mb-3 flex items-center justify-between">
+                <span>TEAM FEEDBACK</span>
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+              <p class="text-sm text-slate-200 italic leading-relaxed">
+                ${data.quote}
+              </p>
+              <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 font-medium">
+                — ${data.author}
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80 text-xs text-slate-400 space-y-1">
+              <div class="text-white font-semibold">Included Materials:</div>
+              <div>Customized prompt starter kit + runnable single-file browser HTML template ready for each attendee.</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function setBioLength(lengthKey) {
+      currentBioKey = lengthKey;
+      ['short', 'standard', 'long'].forEach(k => {
+        const btn = document.getElementById(`bio-btn-${k}`);
+        if (btn) {
+          if (k === lengthKey) {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-cyan text-black font-bold transition-all';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition-all';
+          }
+        }
+      });
+
+      const textEl = document.getElementById('bioText');
+      if (textEl) {
+        textEl.innerText = SPEAKER_BIOS[lengthKey];
+      }
+    }
+
+    function copyCurrentBio() {
+      const text = SPEAKER_BIOS[currentBioKey];
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        const feedback = document.getElementById('copyFeedback');
+        if (feedback) {
+          feedback.classList.remove('opacity-0');
+          setTimeout(() => feedback.classList.add('opacity-0'), 2500);
+        }
+      } catch (err) {
+        console.error('Copy fallback failed', err);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function loadVibePreset(type) {
+      const input = document.getElementById('vibePromptInput');
+      if (!input) return;
+      if (type === 'status') {
+        input.value = "Build Status Blaster: AI multi-channel status app with Email Summary, Slack Post, and Exec OIGR update with word count";
+      } else if (type === 'cascade') {
+        input.value = "Build Intuit Cascade Creator: Input one source narrative, generate Email blast, Slack digest, and Press Release";
+      } else if (type === 'game') {
+        input.value = "Build a playable retro Space Invaders arcade in HTML canvas with shoot controls and live score";
+      }
+      runVibePrompt();
+    }
+
+    function runVibePrompt() {
+      const input = document.getElementById('vibePromptInput');
+      if (!input) return;
+      const prompt = input.value.toLowerCase();
+      const container = document.getElementById('vibeSandboxContainer');
+      if (!container) return;
+
+      container.innerHTML = `
+        <div class="text-center space-y-3 py-12">
+          <div class="inline-block w-10 h-10 border-4 border-brand-cyan border-t-transparent rounded-full animate-spin"></div>
+          <div class="font-mono text-xs text-brand-cyan font-semibold">VDLC ENGINE COMPILING PROMPT...</div>
+          <div class="text-xs text-slate-400 font-mono">Decomposing requirements & rendering browser DOM</div>
+        </div>
+      `;
+
+      setTimeout(() => {
+        if (prompt.includes('game') || prompt.includes('invader') || prompt.includes('space') || prompt.includes('arcade')) {
+          renderPlayableGame(container);
+        } else if (prompt.includes('cascade') || prompt.includes('comms') || prompt.includes('press release')) {
+          renderCascadeCreator(container);
+        } else {
+          renderStatusBlaster(container);
+        }
+      }, 700);
+    }
+
+    function renderStatusBlaster(container) {
+      container.innerHTML = `
+        <div class="w-full max-w-4xl bg-slate-900 rounded-2xl border border-slate-700 p-5 text-left text-xs font-sans space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div>
+              <span class="font-bold text-white text-base">Status Blaster</span>
+              <span class="text-[10px] text-brand-cyan font-mono ml-2">vibe-coded in 4m 12s</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span class="text-slate-400 text-[11px]">System Status: Green</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-mono text-slate-400 mb-1">Source Progress Notes (Paste raw project updates):</label>
+            <textarea id="sbSource" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs focus:outline-none focus:border-brand-cyan font-sans">Sprint 42 completed on schedule. Migration of 4 platform microservices finalized with zero downtime. Q3 developer velocity improved by 28%. Cross-team dependency in auth service resolved with CTREC team.</textarea>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <label class="text-[11px] text-slate-400">Tone:</label>
+              <select id="sbTone" class="bg-slate-950 border border-slate-800 rounded px-2 py-1 text-slate-300 text-xs">
+                <option value="executive">Senior Executive</option>
+                <option value="team">Team / Casual</option>
+                <option value="technical">Engineering Technical</option>
+              </select>
+            </div>
+            <button onclick="generateStatusOutputs()" class="px-4 py-1.5 rounded-lg bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300">
+              ⚡ Transform Status
+            </button>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
+                <span>📧 Executive Summary</span>
+                <button onclick="copySnippet('sbExecOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
+              </div>
+              <div id="sbExecOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
+                🟢 Sprint 42 delivered: 4 microservices migrated seamlessly with 28% Q3 velocity gain. CTREC auth dependency closed.
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
+                <span>💬 Slack Channel Post</span>
+                <button onclick="copySnippet('sbSlackOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
+              </div>
+              <div id="sbSlackOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
+                🚀 Great news team! Sprint 42 is wrapped. 4 services live, +28% dev velocity unlocked, zero downtime. Shoutout to @CTREC!
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
+                <span>📑 OIGR / Board Update</span>
+                <button onclick="copySnippet('sbOigrOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
+              </div>
+              <div id="sbOigrOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
+                Milestone 4.2 achieved. Modernized platform services deployed within SLA. Risk profile decreased; headcount trajectory intact.
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function generateStatusOutputs() {
+      const tone = document.getElementById('sbTone').value;
+      const exec = document.getElementById('sbExecOut');
+      const slack = document.getElementById('sbSlackOut');
+      const oigr = document.getElementById('sbOigrOut');
+      if (!exec || !slack || !oigr) return;
+
+      if (tone === 'technical') {
+        exec.innerText = `🟢 Architecture Health: 4/4 microservice deploys verified. Zero regressions in auth handshake. Telemetry shows +28% developer throughput.`;
+        slack.innerText = `🛠 PR merged to main. Services cut over clean. Kudos to platform team for 0-downtime execution!`;
+        oigr.innerText = `Infrastructure modernization Phase 1 confirmed. Technical debt reduced by 14 points on core ecosystem services.`;
+      } else if (tone === 'team') {
+        exec.innerText = `🎉 Huge sprint win! All 4 migrations in the books without a hitch. Big velocity jump this quarter.`;
+        slack.innerText = `🙌 Boom! Sprint 42 done! Pizza time. CTREC heroes crushed the auth integration today! 🍕`;
+        oigr.innerText = `Team morale high; all sprint deliverables completed ahead of deadline with exceptional quality marks.`;
+      } else {
+        exec.innerText = `🟢 Sprint 42 delivered: 4 microservices migrated seamlessly with 28% Q3 velocity gain. CTREC auth dependency closed.`;
+        slack.innerText = `🚀 Great news team! Sprint 42 is wrapped. 4 services live, +28% dev velocity unlocked, zero downtime. Shoutout to @CTREC!`;
+        oigr.innerText = `Milestone 4.2 achieved. Modernized platform services deployed within SLA. Risk profile decreased; headcount trajectory intact.`;
+      }
+      showToast('Status Blaster', 'Updated outputs across all 3 channels!');
+    }
+
+    function renderCascadeCreator(container) {
+      container.innerHTML = `
+        <div class="w-full max-w-4xl bg-slate-900 rounded-2xl border border-slate-700 p-5 text-left text-xs font-sans space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div>
+              <span class="font-bold text-white text-base">Intuit Cascade Creator</span>
+              <span class="text-[10px] text-brand-violet font-mono ml-2">Live Comms Edition</span>
+            </div>
+            <span class="px-2.5 py-0.5 rounded-full bg-brand-violet/20 text-brand-violet text-[10px] font-bold">1-Prompt Cascade</span>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-mono text-slate-400 mb-1">Single Core Announcement:</label>
+            <input id="cascadeInput" type="text" value="Launching our new AI Planning Cortex for FY28 to eliminate 6,000 hours of dependency friction" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs focus:outline-none focus:border-brand-violet font-sans">
+          </div>
+
+          <div class="flex justify-end">
+            <button onclick="regenerateCascade()" class="px-4 py-1.5 rounded-lg bg-brand-violet text-white font-bold text-xs hover:bg-purple-500">
+              Generate 3-Channel Cascade
+            </button>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-3">
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <span class="text-white font-bold block text-[11px]">📧 All-Staff Email</span>
+              <div id="casEmail" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
+                Subject: Modernizing how we plan: Introducing Planning Cortex for FY28. We are moving to an envelope-first model so our engineers can focus on building customer value.
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <span class="text-white font-bold block text-[11px]">💬 Slack Announcement</span>
+              <div id="casSlack" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
+                📣 Excited to roll out Planning Cortex! Say goodbye to tedious dependency spreadsheets and hello to streamlined 30-minute 1:1 alignments. Check out the guide in #tech-strategy.
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <span class="text-white font-bold block text-[11px]">📰 Executive Brief / PR</span>
+              <div id="casPR" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
+                HEADLINE: Tech Ecosystem Adopts AI-Native Planning Architecture, Slashing Planning Drag by 60% and Anchoring Growth in Board-Grade Envelopes.
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function regenerateCascade() {
+      const val = document.getElementById('cascadeInput')?.value || 'New Announcement';
+      const emailEl = document.getElementById('casEmail');
+      const slackEl = document.getElementById('casSlack');
+      const prEl = document.getElementById('casPR');
+      if (emailEl) emailEl.innerText = `Subject: Update: ${val}. We are aligning our leadership mechanisms to enable faster execution and remove operational drag.`;
+      if (slackEl) slackEl.innerText = `⚡ Team update: ${val}! More details posted on our central hub. Drop questions below! 👇`;
+      if (prEl) prEl.innerText = `STRATEGIC ANNOUNCEMENT: Intuit advances workforce capabilities with ${val}, delivering greater agility and customer speed.`;
+      showToast('Cascade Creator', 'Synthesized 3 channel-specific variants!');
+    }
+
+    let gameInterval = null;
+    function renderPlayableGame(container) {
+      container.innerHTML = `
+        <div class="w-full max-w-md bg-slate-950 rounded-2xl border border-brand-cyan/40 p-4 text-center space-y-3 shadow-2xl">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-brand-cyan font-bold">ARCADE: RETRO INVADERS</span>
+            <span class="text-slate-400">SCORE: <span id="gameScore" class="text-brand-orange font-bold">0</span></span>
+          </div>
+
+          <div class="relative w-full aspect-[4/3] bg-black rounded-xl overflow-hidden border border-slate-800">
+            <canvas id="gameCanvas" width="360" height="270" class="w-full h-full block"></canvas>
+            <div id="gameOverlay" class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center p-4">
+              <p class="text-sm font-bold text-white mb-2">10-Minute Vibe Coding Challenge</p>
+              <p class="text-xs text-slate-300 mb-4">Click below to start playing in your browser</p>
+              <button onclick="startGameEngine()" class="px-5 py-2 rounded-xl bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300">
+                Play Game
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+            <span>Controls: [◀] [▶] or Tap Buttons</span>
+            <span>Shoot: [Space]</span>
+          </div>
+
+          <div class="flex items-center justify-center gap-2 pt-1">
+            <button id="btnLeft" class="px-4 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold active:bg-brand-cyan active:text-black">◀ Left</button>
+            <button id="btnShoot" class="px-6 py-2 rounded-lg bg-brand-orange text-black text-xs font-bold active:scale-95">🔥 Fire</button>
+            <button id="btnRight" class="px-4 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold active:bg-brand-cyan active:text-black">Right ▶</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function startGameEngine() {
+      const overlay = document.getElementById('gameOverlay');
+      if (overlay) overlay.style.display = 'none';
+
+      const canvas = document.getElementById('gameCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let playerX = 180;
+      let score = 0;
+      let bullets = [];
+      let invaders = [];
+
+      for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 7; c++) {
+          invaders.push({ x: 40 + c * 40, y: 30 + r * 28, alive: true });
+        }
+      }
+
+      let keys = {};
+      window.onkeydown = (e) => {
+        keys[e.code] = true;
+        if (e.code === 'Space') {
+          bullets.push({ x: playerX + 12, y: 240 });
+        }
+      };
+      window.onkeyup = (e) => { keys[e.code] = false; };
+
+      const bLeft = document.getElementById('btnLeft');
+      const bRight = document.getElementById('btnRight');
+      const bShoot = document.getElementById('btnShoot');
+
+      if (bLeft) bLeft.onmousedown = () => { playerX = Math.max(10, playerX - 18); };
+      if (bRight) bRight.onmousedown = () => { playerX = Math.min(330, playerX + 18); };
+      if (bShoot) bShoot.onmousedown = () => { bullets.push({ x: playerX + 12, y: 240 }); };
+
+      if (gameInterval) clearInterval(gameInterval);
+
+      gameInterval = setInterval(() => {
+        if (keys['ArrowLeft'] || keys['KeyA']) playerX = Math.max(10, playerX - 4);
+        if (keys['ArrowRight'] || keys['KeyD']) playerX = Math.min(330, playerX + 4);
+
+        ctx.fillStyle = '#05070e';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#00E5FF';
+        ctx.fillRect(playerX, 245, 24, 12);
+        ctx.fillRect(playerX + 8, 238, 8, 7);
+
+        ctx.fillStyle = '#F59E0B';
+        bullets.forEach((b, idx) => {
+          b.y -= 5;
+          ctx.fillRect(b.x, b.y, 3, 8);
+          if (b.y < 0) bullets.splice(idx, 1);
+        });
+
+        let anyAlive = false;
+        invaders.forEach(inv => {
+          if (!inv.alive) return;
+          anyAlive = true;
+          ctx.fillStyle = '#10B981';
+          ctx.fillRect(inv.x, inv.y, 20, 14);
+          ctx.fillStyle = '#05070e';
+          ctx.fillRect(inv.x + 3, inv.y + 3, 4, 4);
+          ctx.fillRect(inv.x + 13, inv.y + 3, 4, 4);
+
+          bullets.forEach((b, bIdx) => {
+            if (b.x > inv.x && b.x < inv.x + 20 && b.y > inv.y && b.y < inv.y + 14) {
+              inv.alive = false;
+              bullets.splice(bIdx, 1);
+              score += 10;
+              const scoreEl = document.getElementById('gameScore');
+              if (scoreEl) scoreEl.innerText = score;
+            }
+          });
+        });
+
+        if (!anyAlive) {
+          ctx.fillStyle = '#00E5FF';
+          ctx.font = '16px monospace';
+          ctx.fillText('ALL ALIENS VIBED! YOU WIN!', 65, 140);
+        }
+      }, 1000 / 45);
+    }
+
+    function copySnippet(elementId) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const textarea = document.createElement('textarea');
+      textarea.value = el.innerText;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('Copied to Clipboard', 'Ready to paste into your tool!');
+      } catch (err) {}
+      document.body.removeChild(textarea);
+    }
+
+    function openBookingModal(trackTitle) {
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.classList.remove('hidden');
+      if (trackTitle) {
+        const select = document.getElementById('modalTrackSelect');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].text.includes(trackTitle) || select.options[i].value.includes(trackTitle)) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('formName')?.value || 'Teammate';
+      const email = document.getElementById('formEmail')?.value || '';
+      const org = document.getElementById('formOrg')?.value || 'Not specified';
+      const topic = document.getElementById('modalTrackSelect')?.value || 'General inquiry';
+      const message = document.getElementById('formMessage')?.value || '';
+
+      const emailSubject = encodeURIComponent(`Connecting via AI Portfolio: ${topic}`);
+      const emailBody = encodeURIComponent(
+        `Hi Greg,\n\nName: ${name}\nEmail / Contact: ${email}\nTeam/Org: ${org}\nInterest: ${topic}\n\nNotes:\n${message}\n\n-- Sent via Greg Hicks Portfolio`
+      );
+
+      // Clipboard fallback for static hosting
+      const fullText = `From: ${name} (${email})\nTeam: ${org}\nTopic: ${topic}\n\nMessage:\n${message}`;
+      const tempArea = document.createElement('textarea');
+      tempArea.value = fullText;
+      tempArea.style.position = 'fixed';
+      tempArea.style.opacity = '0';
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {}
+      document.body.removeChild(tempArea);
+
+      // Trigger mailto client
+      window.location.href = `mailto:ghicksla@comcast.net?subject=${emailSubject}&body=${emailBody}`;
+
+      closeBookingModal();
+      showToast('Note Prepared!', 'Message copied to your clipboard & email draft opened.');
+      document.getElementById('bookingForm')?.reset();
+    }
+
+    function showToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      if (!toast) return;
+      document.getElementById('toastTitle').innerText = title;
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+
+    function downloadSpeakerSheet() {
+      window.print();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Local-only materials — never publish decks/docs
+TEMP/
+*.pdf
+*.pptx
+*.ppt
+*.key
