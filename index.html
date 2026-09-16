@@ -12,7 +12,7 @@
   <!-- Open Graph / Social Sharing (Optimized for GitHub Pages URLs) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Greg Hicks | AI-Native Practitioner & Workshop Facilitator">
-  <meta property="og:description" content="Turn ambiguity into working software. Explore authentic workshop playbooks, past conference sessions, and the interactive Vibe Studio.">
+  <meta property="og:description" content="Turn ambiguity into working software. Explore authentic workshop playbooks and past conference sessions.">
   <meta property="og:image" content="https://ghicksla.github.io/cursor-gregs-portfolio/greg-hicks.jpg">
   
   <!-- Twitter Card -->
@@ -150,10 +150,6 @@
         <a href="#timeline" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Past Sessions</a>
         <a href="#audiences" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">By Audience</a>
         <a href="#tracks" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Workshop Playbooks</a>
-        <a href="#vibe-studio" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors flex items-center gap-1.5">
-          <span class="text-xs px-2 py-0.5 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">Interactive</span>
-          Vibe Studio
-        </a>
         <a href="#toolkit" class="text-sm font-medium text-slate-300 hover:text-brand-cyan transition-colors">Organizer Guide</a>
       </nav>
 
@@ -182,7 +178,6 @@
       <a href="#timeline" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Past Sessions Archive</a>
       <a href="#audiences" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">By Audience</a>
       <a href="#tracks" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Workshop Playbooks</a>
-      <a href="#vibe-studio" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Interactive Vibe Studio</a>
       <a href="#toolkit" onclick="toggleMobileMenu()" class="text-sm text-slate-300 hover:text-brand-cyan py-1">Organizer Guide</a>
       <button onclick="toggleMobileMenu(); openBookingModal('Mobile Menu')" class="w-full mt-2 py-3 rounded-xl bg-brand-cyan text-black font-bold text-sm">Let's Connect</button>
     </div>
@@ -602,80 +597,6 @@
     </div>
   </section>
 
-  <section id="vibe-studio" class="py-24 bg-slate-950 relative border-t border-b border-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
-        <span class="text-xs font-mono text-brand-emerald uppercase tracking-wider px-3 py-1 rounded-full bg-brand-emerald/10 border border-brand-emerald/20">Show, Don't Tell</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience Greg's "Mini-Vibe Studio"</h2>
-        <p class="text-slate-400 text-base sm:text-lg">
-          During keynotes, Greg never shows static bullet points—audiences watch functional software compile live. Select a workshop prompt below or type your own to see how natural language triggers instant interactive software.
-        </p>
-      </div>
-
-      <!-- Studio Interactive Canvas UI -->
-      <div class="glass-panel rounded-3xl p-6 lg:p-8 border border-brand-cyan/25 shadow-2xl">
-        
-        <!-- Header row with prompt buttons -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
-          <div>
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-brand-cyan animate-ping"></span>
-              Gemini Canvas Simulator
-            </h3>
-            <p class="text-xs text-slate-400">Select an authentic workshop project built during Greg's sessions:</p>
-          </div>
-
-          <!-- Prompt Preset Buttons -->
-          <div class="flex flex-wrap gap-2">
-            <button onclick="loadVibePreset('status')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-black transition-all">
-              ⚡ Status Blaster (PgM)
-            </button>
-            <button onclick="loadVibePreset('cascade')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700 hover:bg-brand-violet hover:text-white transition-all">
-              📣 Cascade Creator (Comms)
-            </button>
-            <button onclick="loadVibePreset('game')" class="preset-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700 hover:bg-brand-orange hover:text-black transition-all">
-              👾 Space Invaders (10-Min Dev)
-            </button>
-          </div>
-        </div>
-
-        <!-- Prompt input and execution bar -->
-        <div class="py-5">
-          <label class="block text-xs font-mono text-slate-400 mb-2">PROMPT TO CANVAS:</label>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <div class="relative flex-1">
-              <input id="vibePromptInput" type="text" value="Build a multi-channel status generator with tone refinement, one-sentence TL;DR, and executive summary" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-200 font-mono focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan transition-all">
-            </div>
-            <button onclick="runVibePrompt()" class="px-6 py-3 rounded-xl bg-brand-cyan hover:bg-cyan-300 text-brand-dark font-bold text-sm flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-brand-cyan/20">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-              <span>Compile Vibe App</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Output Sandbox Area -->
-        <div class="mt-4 rounded-2xl bg-slate-900/90 border border-slate-800 p-6 min-h-[420px] flex flex-col justify-center items-center relative overflow-hidden" id="vibeSandboxContainer">
-          <!-- Dynamic sandbox content will render here -->
-        </div>
-
-        <!-- Proof Hook -->
-        <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
-          <div class="flex items-center gap-2">
-            <span class="text-brand-emerald">✔ Real Enterprise Artifacts:</span>
-            <span>Over 1,200 functional web apps compiled live across Intuit teams in 2025–2026.</span>
-          </div>
-          <button onclick="openBookingModal('Hands-On Vibe Coding Lab')" class="text-brand-cyan hover:underline font-semibold flex items-center gap-1">
-            Run this interactive lab with your team →
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
 
   <section id="tracks" class="py-24 bg-brand-dark relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1252,7 +1173,6 @@
 
       switchAudienceTab('tpm');
       setBioLength('standard');
-      loadVibePreset('status');
     });
 
     function toggleMobileMenu() {
@@ -1369,311 +1289,6 @@
       document.body.removeChild(textarea);
     }
 
-    function loadVibePreset(type) {
-      const input = document.getElementById('vibePromptInput');
-      if (!input) return;
-      if (type === 'status') {
-        input.value = "Build Status Blaster: AI multi-channel status app with Email Summary, Slack Post, and Exec OIGR update with word count";
-      } else if (type === 'cascade') {
-        input.value = "Build Intuit Cascade Creator: Input one source narrative, generate Email blast, Slack digest, and Press Release";
-      } else if (type === 'game') {
-        input.value = "Build a playable retro Space Invaders arcade in HTML canvas with shoot controls and live score";
-      }
-      runVibePrompt();
-    }
-
-    function runVibePrompt() {
-      const input = document.getElementById('vibePromptInput');
-      if (!input) return;
-      const prompt = input.value.toLowerCase();
-      const container = document.getElementById('vibeSandboxContainer');
-      if (!container) return;
-
-      container.innerHTML = `
-        <div class="text-center space-y-3 py-12">
-          <div class="inline-block w-10 h-10 border-4 border-brand-cyan border-t-transparent rounded-full animate-spin"></div>
-          <div class="font-mono text-xs text-brand-cyan font-semibold">VDLC ENGINE COMPILING PROMPT...</div>
-          <div class="text-xs text-slate-400 font-mono">Decomposing requirements & rendering browser DOM</div>
-        </div>
-      `;
-
-      setTimeout(() => {
-        if (prompt.includes('game') || prompt.includes('invader') || prompt.includes('space') || prompt.includes('arcade')) {
-          renderPlayableGame(container);
-        } else if (prompt.includes('cascade') || prompt.includes('comms') || prompt.includes('press release')) {
-          renderCascadeCreator(container);
-        } else {
-          renderStatusBlaster(container);
-        }
-      }, 700);
-    }
-
-    function renderStatusBlaster(container) {
-      container.innerHTML = `
-        <div class="w-full max-w-4xl bg-slate-900 rounded-2xl border border-slate-700 p-5 text-left text-xs font-sans space-y-4">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="font-bold text-white text-base">Status Blaster</span>
-              <span class="text-[10px] text-brand-cyan font-mono ml-2">vibe-coded in 4m 12s</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span class="text-slate-400 text-[11px]">System Status: Green</span>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-mono text-slate-400 mb-1">Source Progress Notes (Paste raw project updates):</label>
-            <textarea id="sbSource" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs focus:outline-none focus:border-brand-cyan font-sans">Sprint 42 completed on schedule. Migration of 4 platform microservices finalized with zero downtime. Q3 developer velocity improved by 28%. Cross-team dependency in auth service resolved with CTREC team.</textarea>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <label class="text-[11px] text-slate-400">Tone:</label>
-              <select id="sbTone" class="bg-slate-950 border border-slate-800 rounded px-2 py-1 text-slate-300 text-xs">
-                <option value="executive">Senior Executive</option>
-                <option value="team">Team / Casual</option>
-                <option value="technical">Engineering Technical</option>
-              </select>
-            </div>
-            <button onclick="generateStatusOutputs()" class="px-4 py-1.5 rounded-lg bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300">
-              ⚡ Transform Status
-            </button>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-3 pt-2">
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
-                <span>📧 Executive Summary</span>
-                <button onclick="copySnippet('sbExecOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
-              </div>
-              <div id="sbExecOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
-                🟢 Sprint 42 delivered: 4 microservices migrated seamlessly with 28% Q3 velocity gain. CTREC auth dependency closed.
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
-                <span>💬 Slack Channel Post</span>
-                <button onclick="copySnippet('sbSlackOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
-              </div>
-              <div id="sbSlackOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
-                🚀 Great news team! Sprint 42 is wrapped. 4 services live, +28% dev velocity unlocked, zero downtime. Shoutout to @CTREC!
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <div class="flex items-center justify-between text-slate-300 font-bold text-[11px]">
-                <span>📑 OIGR / Board Update</span>
-                <button onclick="copySnippet('sbOigrOut')" class="text-brand-cyan hover:underline text-[10px]">Copy</button>
-              </div>
-              <div id="sbOigrOut" class="text-slate-300 text-[11px] leading-relaxed p-2 rounded bg-slate-900/60 min-h-[90px]">
-                Milestone 4.2 achieved. Modernized platform services deployed within SLA. Risk profile decreased; headcount trajectory intact.
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function generateStatusOutputs() {
-      const tone = document.getElementById('sbTone').value;
-      const exec = document.getElementById('sbExecOut');
-      const slack = document.getElementById('sbSlackOut');
-      const oigr = document.getElementById('sbOigrOut');
-      if (!exec || !slack || !oigr) return;
-
-      if (tone === 'technical') {
-        exec.innerText = `🟢 Architecture Health: 4/4 microservice deploys verified. Zero regressions in auth handshake. Telemetry shows +28% developer throughput.`;
-        slack.innerText = `🛠 PR merged to main. Services cut over clean. Kudos to platform team for 0-downtime execution!`;
-        oigr.innerText = `Infrastructure modernization Phase 1 confirmed. Technical debt reduced by 14 points on core ecosystem services.`;
-      } else if (tone === 'team') {
-        exec.innerText = `🎉 Huge sprint win! All 4 migrations in the books without a hitch. Big velocity jump this quarter.`;
-        slack.innerText = `🙌 Boom! Sprint 42 done! Pizza time. CTREC heroes crushed the auth integration today! 🍕`;
-        oigr.innerText = `Team morale high; all sprint deliverables completed ahead of deadline with exceptional quality marks.`;
-      } else {
-        exec.innerText = `🟢 Sprint 42 delivered: 4 microservices migrated seamlessly with 28% Q3 velocity gain. CTREC auth dependency closed.`;
-        slack.innerText = `🚀 Great news team! Sprint 42 is wrapped. 4 services live, +28% dev velocity unlocked, zero downtime. Shoutout to @CTREC!`;
-        oigr.innerText = `Milestone 4.2 achieved. Modernized platform services deployed within SLA. Risk profile decreased; headcount trajectory intact.`;
-      }
-      showToast('Status Blaster', 'Updated outputs across all 3 channels!');
-    }
-
-    function renderCascadeCreator(container) {
-      container.innerHTML = `
-        <div class="w-full max-w-4xl bg-slate-900 rounded-2xl border border-slate-700 p-5 text-left text-xs font-sans space-y-4">
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-            <div>
-              <span class="font-bold text-white text-base">Intuit Cascade Creator</span>
-              <span class="text-[10px] text-brand-violet font-mono ml-2">Live Comms Edition</span>
-            </div>
-            <span class="px-2.5 py-0.5 rounded-full bg-brand-violet/20 text-brand-violet text-[10px] font-bold">1-Prompt Cascade</span>
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-mono text-slate-400 mb-1">Single Core Announcement:</label>
-            <input id="cascadeInput" type="text" value="Launching our new AI Planning Cortex for FY28 to eliminate 6,000 hours of dependency friction" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs focus:outline-none focus:border-brand-violet font-sans">
-          </div>
-
-          <div class="flex justify-end">
-            <button onclick="regenerateCascade()" class="px-4 py-1.5 rounded-lg bg-brand-violet text-white font-bold text-xs hover:bg-purple-500">
-              Generate 3-Channel Cascade
-            </button>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-3">
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <span class="text-white font-bold block text-[11px]">📧 All-Staff Email</span>
-              <div id="casEmail" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
-                Subject: Modernizing how we plan: Introducing Planning Cortex for FY28. We are moving to an envelope-first model so our engineers can focus on building customer value.
-              </div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <span class="text-white font-bold block text-[11px]">💬 Slack Announcement</span>
-              <div id="casSlack" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
-                📣 Excited to roll out Planning Cortex! Say goodbye to tedious dependency spreadsheets and hello to streamlined 30-minute 1:1 alignments. Check out the guide in #tech-strategy.
-              </div>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-              <span class="text-white font-bold block text-[11px]">📰 Executive Brief / PR</span>
-              <div id="casPR" class="text-slate-300 text-[11px] p-2 rounded bg-slate-900/60 leading-relaxed min-h-[110px]">
-                HEADLINE: Tech Ecosystem Adopts AI-Native Planning Architecture, Slashing Planning Drag by 60% and Anchoring Growth in Board-Grade Envelopes.
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function regenerateCascade() {
-      const val = document.getElementById('cascadeInput')?.value || 'New Announcement';
-      const emailEl = document.getElementById('casEmail');
-      const slackEl = document.getElementById('casSlack');
-      const prEl = document.getElementById('casPR');
-      if (emailEl) emailEl.innerText = `Subject: Update: ${val}. We are aligning our leadership mechanisms to enable faster execution and remove operational drag.`;
-      if (slackEl) slackEl.innerText = `⚡ Team update: ${val}! More details posted on our central hub. Drop questions below! 👇`;
-      if (prEl) prEl.innerText = `STRATEGIC ANNOUNCEMENT: Intuit advances workforce capabilities with ${val}, delivering greater agility and customer speed.`;
-      showToast('Cascade Creator', 'Synthesized 3 channel-specific variants!');
-    }
-
-    let gameInterval = null;
-    function renderPlayableGame(container) {
-      container.innerHTML = `
-        <div class="w-full max-w-md bg-slate-950 rounded-2xl border border-brand-cyan/40 p-4 text-center space-y-3 shadow-2xl">
-          <div class="flex items-center justify-between text-xs font-mono">
-            <span class="text-brand-cyan font-bold">ARCADE: RETRO INVADERS</span>
-            <span class="text-slate-400">SCORE: <span id="gameScore" class="text-brand-orange font-bold">0</span></span>
-          </div>
-
-          <div class="relative w-full aspect-[4/3] bg-black rounded-xl overflow-hidden border border-slate-800">
-            <canvas id="gameCanvas" width="360" height="270" class="w-full h-full block"></canvas>
-            <div id="gameOverlay" class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center p-4">
-              <p class="text-sm font-bold text-white mb-2">10-Minute Vibe Coding Challenge</p>
-              <p class="text-xs text-slate-300 mb-4">Click below to start playing in your browser</p>
-              <button onclick="startGameEngine()" class="px-5 py-2 rounded-xl bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300">
-                Play Game
-              </button>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
-            <span>Controls: [◀] [▶] or Tap Buttons</span>
-            <span>Shoot: [Space]</span>
-          </div>
-
-          <div class="flex items-center justify-center gap-2 pt-1">
-            <button id="btnLeft" class="px-4 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold active:bg-brand-cyan active:text-black">◀ Left</button>
-            <button id="btnShoot" class="px-6 py-2 rounded-lg bg-brand-orange text-black text-xs font-bold active:scale-95">🔥 Fire</button>
-            <button id="btnRight" class="px-4 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold active:bg-brand-cyan active:text-black">Right ▶</button>
-          </div>
-        </div>
-      `;
-    }
-
-    function startGameEngine() {
-      const overlay = document.getElementById('gameOverlay');
-      if (overlay) overlay.style.display = 'none';
-
-      const canvas = document.getElementById('gameCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      let playerX = 180;
-      let score = 0;
-      let bullets = [];
-      let invaders = [];
-
-      for (let r = 0; r < 3; r++) {
-        for (let c = 0; c < 7; c++) {
-          invaders.push({ x: 40 + c * 40, y: 30 + r * 28, alive: true });
-        }
-      }
-
-      let keys = {};
-      window.onkeydown = (e) => {
-        keys[e.code] = true;
-        if (e.code === 'Space') {
-          bullets.push({ x: playerX + 12, y: 240 });
-        }
-      };
-      window.onkeyup = (e) => { keys[e.code] = false; };
-
-      const bLeft = document.getElementById('btnLeft');
-      const bRight = document.getElementById('btnRight');
-      const bShoot = document.getElementById('btnShoot');
-
-      if (bLeft) bLeft.onmousedown = () => { playerX = Math.max(10, playerX - 18); };
-      if (bRight) bRight.onmousedown = () => { playerX = Math.min(330, playerX + 18); };
-      if (bShoot) bShoot.onmousedown = () => { bullets.push({ x: playerX + 12, y: 240 }); };
-
-      if (gameInterval) clearInterval(gameInterval);
-
-      gameInterval = setInterval(() => {
-        if (keys['ArrowLeft'] || keys['KeyA']) playerX = Math.max(10, playerX - 4);
-        if (keys['ArrowRight'] || keys['KeyD']) playerX = Math.min(330, playerX + 4);
-
-        ctx.fillStyle = '#05070e';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = '#00E5FF';
-        ctx.fillRect(playerX, 245, 24, 12);
-        ctx.fillRect(playerX + 8, 238, 8, 7);
-
-        ctx.fillStyle = '#F59E0B';
-        bullets.forEach((b, idx) => {
-          b.y -= 5;
-          ctx.fillRect(b.x, b.y, 3, 8);
-          if (b.y < 0) bullets.splice(idx, 1);
-        });
-
-        let anyAlive = false;
-        invaders.forEach(inv => {
-          if (!inv.alive) return;
-          anyAlive = true;
-          ctx.fillStyle = '#10B981';
-          ctx.fillRect(inv.x, inv.y, 20, 14);
-          ctx.fillStyle = '#05070e';
-          ctx.fillRect(inv.x + 3, inv.y + 3, 4, 4);
-          ctx.fillRect(inv.x + 13, inv.y + 3, 4, 4);
-
-          bullets.forEach((b, bIdx) => {
-            if (b.x > inv.x && b.x < inv.x + 20 && b.y > inv.y && b.y < inv.y + 14) {
-              inv.alive = false;
-              bullets.splice(bIdx, 1);
-              score += 10;
-              const scoreEl = document.getElementById('gameScore');
-              if (scoreEl) scoreEl.innerText = score;
-            }
-          });
-        });
-
-        if (!anyAlive) {
-          ctx.fillStyle = '#00E5FF';
-          ctx.font = '16px monospace';
-          ctx.fillText('ALL ALIENS VIBED! YOU WIN!', 65, 140);
-        }
-      }, 1000 / 45);
-    }
 
     function copySnippet(elementId) {
       const el = document.getElementById(elementId);
