@@ -1064,7 +1064,7 @@
 
         <div class="pt-2">
           <p class="text-[11px] text-slate-400 font-mono">
-            💡 Submitting opens your email client with this note and copies the text to your clipboard.
+            💡 Submitting opens a Gmail draft to Greg and copies this note to your clipboard.
           </p>
         </div>
 
@@ -1364,11 +1364,12 @@
       } catch (err) {}
       document.body.removeChild(tempArea);
 
-      // Trigger mailto client
-      window.location.href = `mailto:ghicksla@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+      // Open Gmail web compose (works when visitors use Gmail in the browser)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('ghicksla@gmail.com')}&su=${emailSubject}&body=${emailBody}`;
+      window.open(gmailUrl, '_blank', 'noopener,noreferrer');
 
       closeBookingModal();
-      showToast('Note Prepared!', 'Message copied to your clipboard & email draft opened.');
+      showToast('Note Prepared!', 'Message copied — Gmail draft opened in a new tab.');
       document.getElementById('bookingForm')?.reset();
     }
 
