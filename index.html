@@ -1027,7 +1027,7 @@
       </div>
 
       <!-- Inquiry Form -->
-      <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4 text-left">
+      <form id="bookingForm" class="space-y-4 text-left">
         
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
@@ -1064,15 +1064,18 @@
 
         <div class="pt-2">
           <p class="text-[11px] text-slate-400 font-mono">
-            💡 Submitting opens a Gmail draft to Greg and copies this note to your clipboard.
+            Choose how you send email — either way, this note is copied to your clipboard.
           </p>
         </div>
 
-        <div class="pt-2 flex items-center justify-end gap-3">
-          <button type="button" onclick="closeBookingModal()" class="px-5 py-2.5 rounded-xl text-slate-400 hover:text-white text-sm">Cancel</button>
-          <button type="submit" class="px-7 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-sm hover:bg-cyan-300 transition-all shadow-lg shadow-brand-cyan/20 flex items-center gap-2">
+        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
+          <button type="button" onclick="closeBookingModal()" class="px-5 py-2.5 rounded-xl text-slate-400 hover:text-white text-sm order-3 sm:order-1">Cancel</button>
+          <button type="button" onclick="handleBookingSubmit(event, 'mailto')" class="order-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm border border-slate-700 transition-all">
+            Open Email App
+          </button>
+          <button type="button" onclick="handleBookingSubmit(event, 'gmail')" class="order-1 sm:order-3 px-7 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-sm hover:bg-cyan-300 transition-all shadow-lg shadow-brand-cyan/20 flex items-center justify-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            <span>Send Note</span>
+            <span>Open in Gmail</span>
           </button>
         </div>
 
@@ -1337,8 +1340,11 @@
       if (modal) modal.classList.add('hidden');
     }
 
-    function handleBookingSubmit(e) {
+    function handleBookingSubmit(e, method) {
       e.preventDefault();
+
+      const form = document.getElementById('bookingForm');
+      if (form && !form.reportValidity()) return;
       
       const name = document.getElementById('formName')?.value || 'Teammate';
       const email = document.getElementById('formEmail')?.value || '';
@@ -1364,12 +1370,16 @@
       } catch (err) {}
       document.body.removeChild(tempArea);
 
-      // Open Gmail web compose (works when visitors use Gmail in the browser)
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('ghicksla@gmail.com')}&su=${emailSubject}&body=${emailBody}`;
-      window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      if (method === 'gmail') {
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('ghicksla@gmail.com')}&su=${emailSubject}&body=${emailBody}`;
+        window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+        showToast('Note Prepared!', 'Copied to clipboard — Gmail draft opened in a new tab.');
+      } else {
+        window.location.href = `mailto:ghicksla@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+        showToast('Note Prepared!', 'Copied to clipboard — your email app should open a draft.');
+      }
 
       closeBookingModal();
-      showToast('Note Prepared!', 'Message copied — Gmail draft opened in a new tab.');
       document.getElementById('bookingForm')?.reset();
     }
 
